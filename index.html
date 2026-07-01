@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>영어 지문 순서추론 게임</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="top-bar">
+      <div>
+        <p class="eyebrow">Sequence Challenge</p>
+        <h1>영어 지문 순서추론</h1>
+      </div>
+      <button id="restartButton" class="icon-button" type="button" aria-label="재시작">↻</button>
+    </header>
+
+    <section class="status-panel" aria-label="게임 상태">
+      <div>
+        <span class="status-label">진행률</span>
+        <strong id="progressText">0 / 0</strong>
+      </div>
+      <div>
+        <span class="status-label">점수</span>
+        <strong id="scoreText">0</strong>
+      </div>
+      <div>
+        <span class="status-label">남은 문제</span>
+        <strong id="remainingText">0</strong>
+      </div>
+      <div>
+        <span class="status-label">콤보</span>
+        <strong id="comboText">0</strong>
+      </div>
+    </section>
+
+    <div class="progress-track" aria-hidden="true">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <section id="gameView" class="game-view">
+      <div class="question-head">
+        <span id="questionId" class="question-id">18</span>
+        <h2>다음 주어진 글 다음에 이어질 순서를 정하시오.</h2>
+      </div>
+
+      <article class="prompt-card">
+        <p id="promptText"></p>
+      </article>
+
+      <section class="selected-section" aria-label="선택한 순서">
+        <div class="section-title">
+          <h3>선택한 순서</h3>
+          <button id="clearSelectionButton" type="button" class="text-button">선택 초기화</button>
+        </div>
+        <div id="selectedList" class="selected-list"></div>
+      </section>
+
+      <section class="choices-section" aria-label="보기">
+        <h3>보기 카드</h3>
+        <div id="choicesList" class="choices-list"></div>
+      </section>
+
+      <section id="resultPanel" class="result-panel" aria-live="polite"></section>
+
+      <div class="action-row">
+        <button id="checkButton" type="button" class="primary-button">정답 확인</button>
+        <button id="nextButton" type="button" class="secondary-button" disabled>다음 문제</button>
+      </div>
+    </section>
+
+    <section id="finalView" class="final-view hidden">
+      <p class="eyebrow">Game Complete</p>
+      <h2>최종 결과</h2>
+      <div class="final-grid">
+        <div>
+          <span>총점</span>
+          <strong id="finalScore">0</strong>
+        </div>
+        <div>
+          <span>정답 수</span>
+          <strong id="finalCorrect">0</strong>
+        </div>
+        <div>
+          <span>최고 콤보</span>
+          <strong id="finalCombo">0</strong>
+        </div>
+      </div>
+      <button id="finalRestartButton" type="button" class="primary-button">다시 시작</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
